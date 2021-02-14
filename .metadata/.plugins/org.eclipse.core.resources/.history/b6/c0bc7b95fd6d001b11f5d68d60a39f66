@@ -1,0 +1,15 @@
+package Lab2_1;
+
+public class Menu {
+	
+	public static void show_menu() {
+		System.out.println("-------------------------------------------");
+		System.out.println("Press 0 for get circle area");
+		System.out.println("Press 1 for get rectangle area");
+		System.out.println("Press 2 for get triangle area");
+		System.out.println("Press 3 for get trapezoid area");
+		System.out.println("-------------------------------------------");
+		System.out.printf("Mode number : ");
+	}
+	
+}

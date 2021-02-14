@@ -1,0 +1,54 @@
+package Lab2_1;
+
+public class Main_switch {
+	public static void main(String[] args) {
+		System.out.println("Press 0 for get circle area");
+		System.out.println("Press 1 for get rectangle area");
+		System.out.println("Press 2 for get triangle area");
+		System.out.println("Press 3 for get trapezoid area");
+		System.out.println("-------------------------------------------");
+		System.out.printf("Mode number : ");
+		
+		System.out.printf("\nArea of the shape : %f\n", area((int)UserInput.getDouble()));
+		
+	}
+
+	public static double area(int mode) {
+		switch(mode) {
+		case AreaCalculator.CIRCLE:
+			System.out.print("Please input circle radius :  ");
+			double radius = UserInput.getDouble();
+			return AreaCalculator.circleArea(radius);
+			
+		case AreaCalculator.RECTANGLE:
+			System.out.print("Please input rectangle length :  ");
+			double length = UserInput.getDouble();
+			System.out.print("Please input rectangle width :  ");
+			double width = UserInput.getDouble();
+			return AreaCalculator.rectangleArea(length, width);
+			
+		case AreaCalculator.TRIANGLE:
+			System.out.print("Please input triangle bottom :  ");
+			double bottom = UserInput.getDouble();
+			System.out.print("Please input triangle height :  ");
+			double height = UserInput.getDouble();
+			return AreaCalculator.triangleArea(bottom, height);
+			
+		case AreaCalculator.TRAPEZOID:
+			System.out.print("Please input triangle top :  ");
+			double top = UserInput.getDouble();
+			System.out.print("Please input triangle bottom :  ");
+			double Bottom = UserInput.getDouble();
+			System.out.print("Please input triangle height :  ");
+			double Height = UserInput.getDouble();
+			return AreaCalculator.trapezoidArea(top, Bottom, Height);
+			
+		case -1:
+			System.out.println("Off the Program.");
+		default:
+			return -1.0;
+			
+		}
+		
+	}
+}

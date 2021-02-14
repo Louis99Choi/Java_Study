@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.lir.aarch64.AArch64ControlFlow.StrategySwitchOp.SwitchClosure"/>
+    <fullyQualifiedTypeName name="jdk.internal.net.http.frame.GoAwayFrame"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="jdk.javadoc.internal.doclets.formats.html.PackageIndexWriter"/>
+    <fullyQualifiedTypeName name="Shapes.Circle"/>
+    <fullyQualifiedTypeName name="Shapes.Rectangle"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.jline.utils.WCWidth"/>
+    <fullyQualifiedTypeName name="sun.security.util.Length"/>
+    <fullyQualifiedTypeName name="Shapes.Trapezoid"/>
+    <fullyQualifiedTypeName name="Shapes.Lab1_1"/>
+    <fullyQualifiedTypeName name="java.awt.Shape"/>
+    <fullyQualifiedTypeName name="java.security.DrbgParameters.NextBytes"/>
+    <fullyQualifiedTypeName name="java.awt.desktop.PrintFilesEvent"/>
+    <fullyQualifiedTypeName name="javax.print.StreamPrintServiceFactory"/>
+    <fullyQualifiedTypeName name="Lab1_1.Lab1_1"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.launcher.Main"/>
+    <fullyQualifiedTypeName name="UserInput"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar"/>
+    <fullyQualifiedTypeName name="Lab2_1.AreaCalculator"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Lab2_1.UserInput"/>
+    <fullyQualifiedTypeName name="Lab2_1.Menu"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.GOTO"/>
+    <fullyQualifiedTypeName name="sun.jvm.hotspot.oops.java_lang_Class"/>
+    <fullyQualifiedTypeName name="sun.jvm.hotspot.runtime.StaticBaseConstructor"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+</qualifiedTypeNameHistroy>
