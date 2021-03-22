@@ -6,7 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="get"/>
 		<list key="findhistory">
+			<item value="get"/>
+			<item value="user"/>
+			<item value="scanDewPoint"/>
+			<item value="static Scanner scan = new Scanner(System.in); "/>
 			<item value="&#x09;&#x09;While(outputArea != -1){"/>
 		</list>
 		<list key="replacehistory">
