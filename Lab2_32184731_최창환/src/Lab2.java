@@ -15,7 +15,9 @@ public class Lab2 {
 		return WindChill;
 	}
 
-	// 매개변수로 받은 정수값(value)가 매개변수로 받은 배열(arr[])의 몇번째에 있는지 인덱스를 반환하는 매서드.
+	/* if문과 for문을 사용해 매개변수로 받은 정수값(value)이 
+	 * 매개변수로 받은 배열(arr[])의 몇 번째 원소인지 인덱스를 반환하는 매서드.
+	 */
 	public static int findValueIndex(int[] arr, int value) {
 		int valueIndex = 0;
 		
@@ -29,7 +31,9 @@ public class Lab2 {
 		return valueIndex;
 	}
 
-	// 매개변수로 받은 배열(arr[])의 원소 중에서 매개변수로 받은 정수(value)값과 가장 근사한 값의 인덱스를 반환하는 매서드.
+	/* if문과 for문을 사용해 매개변수로 받은 배열(arr[])의 원소 중에서 
+	 * 매개변수로 받은 정수(value)값과 가장 근사한 값의 인덱스를 반환하는 매서드.
+	 */
 	public static int findSimilarValueIndex(int[] arr, int value) {
 		int index = 0;
 		int diff = 100;
@@ -66,8 +70,10 @@ public class Lab2 {
 			rhList[i] = 100 - i * 5;
 		
 		int[] tcList = { 43, 41, 38, 35, 32, 29, 27, 24, 21, 18, 16, 13, 10, 7, 4, 2, 0 };
-		int stdTCindex = findSimilarValueIndex(tcList, stdTC);
-		int stdRHindex = findValueIndex(rhList, stdRH);
+		
+		//매서드를 통해 입력값과 근사한 값의 인덱스를 구함.
+		int stdTCindex = findSimilarValueIndex(tcList, stdTC); 
+		int stdRHindex = findValueIndex(rhList, stdRH); 
 
 		System.out.printf("\n");
 		for (int i = 0; i < 164; i++)
@@ -75,7 +81,7 @@ public class Lab2 {
 		
 		System.out.printf("\nT(˚C) \\ RH(%%)_ ");
 
-		// 입력받은 상대습도와 근사한 값의 인덱스를 찾아 표에서 표시한다.
+		// for문과 if문을 통해 입력값에 근사한 값이 잘보이게 표시되도록 출력.
 		for (int i = 0; i < rhList.length; i++) {
 			if (i == stdRHindex)
 				System.out.printf("%d%s", rhList[i], starIndex);
@@ -86,7 +92,7 @@ public class Lab2 {
 
 		System.out.printf("\n");
 
-		// 표 안의 값들 중 입력 받은 값과 관련 있는 값과 근사값을 표시한다.
+		// for문과 if문을 사용해 표 안의 값들 중 입력 받은 값과 관련 있는 값과 근사값을 잘 보이도록 표시한다.
 		for (int i = 0; i < tcList.length; i++) {
 			if (i == stdTCindex)
 				System.out.printf("\n      %d %s", tcList[i], starIndex);
@@ -99,8 +105,7 @@ public class Lab2 {
 					break;
 
 				else if ((k == stdRHindex && i <= stdTCindex) || (i == stdTCindex && k < stdRHindex))
-					System.out.printf("%d%s", Math.round(calculateDewPointTemperature(tcList[i], rhList[k])),
-							starIndex);
+					System.out.printf("%d%s", Math.round(calculateDewPointTemperature(tcList[i], rhList[k])), starIndex);
 
 				else
 					System.out.printf("%d%s", Math.round(calculateDewPointTemperature(tcList[i], rhList[k])), tab);
@@ -173,19 +178,20 @@ public class Lab2 {
 		double inputTC, inputRH;
 		double outDewPoint;
 
-		System.out
-				.println("------------------------------------------------------------------------------------------");
-		System.out.printf("Input 'Temperature'(°C) and 'Realative Humidity' to calculate Dew Point Temperature: "); // 온도(°C)와 상대습도를 입력하라는 안내문을 출력.
+		System.out.println("------------------------------------------------------------------------------------------");
+		System.out.printf("Input 'Temperature'(°C) and 'Realative Humidity' to calculate Dew Point Temperature: "); 
 
-		inputTC = UserInput.getDouble(); // 줄단위로 입력 받은 값을 inputT 변수에 실수형으로 저장하는 UserInput 클래스의 메소드.
-		inputRH = UserInput.getDouble(); // 줄단위로 입력 받은 값을 inputRH 변수에 실수형으로 저장하는 UserInput 클래스의 메소드.
+		// 줄단위로 입력 받은 값을 inputRH 변수에 실수형으로 저장하는 UserInput 클래스의 메소드.
+		inputTC = UserInput.getDouble();
+		inputRH = UserInput.getDouble(); 
 
-		outDewPoint = calculateDewPointTemperature(inputTC, inputRH); // 이슬점을 구하는 매소드에 인자로 inputTC와 inputRH를 넣고 얻은 이슬점을
-																		// outDewPoint 변수에 저장.
-		System.out.println("Dew Point Temperature : " + Math.round(outDewPoint * 10) / 10.0); // 안내문을 통해 입력받은 온도와 상대습도로
-																								// 구한 이슬점을 반올림해서 소수점 첫째
-																								// 자리까지 출력.
+		// 이슬점을 구하는 매소드에 인자로 inputTC와 inputRH를 넣고 얻은 이슬점을 outDewPoint 변수에 저장.
+		outDewPoint = calculateDewPointTemperature(inputTC, inputRH);
+		
+		// 안내문을 통해 입력받은 온도와 상대습도로 구한 이슬점을 반올림해서 소수점 첫째 자리까지 출력.
+		System.out.println("Dew Point Temperature : " + Math.round(outDewPoint * 10) / 10.0); 
 
+		//이슬점 온도 표를 출력하는 매서드_입력값에 근사한 값 표시.
 		printDewPointTemperatureTable((int) Math.round(inputTC), (int) Math.round(inputRH - inputRH % 5));
 	}
 
@@ -215,7 +221,7 @@ public class Lab2 {
 		showResponseAdvice(outWindChill);
 	}
 
-	// 매개변수로 받은 체감온도의 값에 따라 외출시 조언을 출력하는 매서드.
+	// 매개변수로 받은 체감온도의 값에 따라 외출 시 조언을 출력하는 매서드.
 	public static void showResponseAdvice(double wcTemperature) {
 		String[] advice = { "옷을 따뜻하게 입음", "모자, 벙어리 장갑, 목도리, 방수 신발 등을 착용함", "방풍기능이 있는 겉옷을 입고, 안에 겹겹이 옷을 입어야 함",
 				"장시간 야외 활동 시 저체온증과 더불어 동상의 위험이 있음" };
