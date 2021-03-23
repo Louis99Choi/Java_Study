@@ -18,6 +18,7 @@ public class UserInput {
 		
 		return selectedNum;
 	}
+	
 	/*q를 입력해 프로그램을 종료하거나 엔터키를 눌러서 계속 실행하라는 안내문과 q 를 입력 받았을 경우 
 	안내문과 함께 프로그램을 종료하도록 각각 true와 false를 반환하는 매서드*/
 	public static boolean getExitKey() {
