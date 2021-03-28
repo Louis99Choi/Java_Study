@@ -1,4 +1,6 @@
-content_assist_autoactivation_triggers_java=.qwertyuioplkjhgfdsazxcvbnm
+content_assist_autoactivation=true
+content_assist_autoactivation_triggers_java=.qwertyuiopasdfghjklzxcvbnm
+content_assist_category_order=org.eclipse.jdt.ui.templateProposalCategory\:0\u0000org.eclipse.jdt.ui.swtProposalCategory\:1\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\:2\u0000org.eclipse.jdt.ui.javaChainProposalCategory\:3\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\:4\u0000org.eclipse.jdt.ui.textProposalCategory\:65540\u0000org.eclipse.jdt.ui.javaAllProposalCategory\:6\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\:65542\u0000
 content_assist_favorite_static_members=org.junit.Assert.*;org.junit.Assume.*;org.junit.jupiter.api.Assertions.*;org.junit.jupiter.api.Assumptions.*;org.junit.jupiter.api.DynamicContainer.*;org.junit.jupiter.api.DynamicTest.*
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.Iterator"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.Scanner"/></lhs></history>
 content_assist_number_of_computers=12
