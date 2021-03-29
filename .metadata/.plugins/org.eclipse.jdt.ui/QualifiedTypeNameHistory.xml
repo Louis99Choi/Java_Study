@@ -20,7 +20,6 @@
     <fullyQualifiedTypeName name="Lab2_1.UserInput"/>
     <fullyQualifiedTypeName name="Lab2_1.Menu"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.GOTO"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.runtime.StaticBaseConstructor"/>
     <fullyQualifiedTypeName name="jdk.internal.org.jline.reader.impl.history.DefaultHistory"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -41,8 +40,11 @@
     <fullyQualifiedTypeName name="javax.management.modelmbean.ModelMBeanNotificationBroadcaster"/>
     <fullyQualifiedTypeName name="Poly.PolyInfo"/>
     <fullyQualifiedTypeName name="Poly.UserInput"/>
-    <fullyQualifiedTypeName name="Poly.OperatePoly"/>
     <fullyQualifiedTypeName name="Poly.UtilInput"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Float"/>
     <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="Poly.OperatePoly"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
