@@ -1,146 +1,180 @@
 package Poly;
-import java.util.*;
 
+import java.util.*;
 
 class UtilInput {
 
 	static Scanner scan = new Scanner(System.in);
 
 	// 입력 받은 값을 줄 단위로 읽어 각각 Double형과 Integer형으로 변환하는 매서드
-	public static float getFloat() {	return Float.parseFloat(scan.nextLine());	}
-	public static int getInteger() {	return Integer.parseInt(scan.nextLine());	}
-	// 입력 받은 값을 공백 단위로 읽어 각각 Double형과 Integer형으로 변환하는 매서드
-	public static float getNextFloat() {	return scan.nextFloat();	}
-	public static int getNextInt() {	return scan.nextInt();	}
-
-	/*
-	 * q를 입력해 프로그램을 종료하거나 엔터키를 눌러서 계속 실행하라는 안내문과 q 를 입력 받았을 경우 안내문과 함께 프로그램을 종료하도록
-	 * 각각 true와 false를 반환하는 매서드
-	 */
-	public static boolean getExitKey() {
-		System.out.print("\nPress q-key to Exit or Enter-key to Continue: ");
-		String s = scan.nextLine();
-		if (s.contentEquals("q")) {
-			System.out.println("====================Exit Program====================");
-			return true;
-		} else
-			return false;
+	public static String getNextLine() {
+		return scan.nextLine();
 	}
+	
 }
-
 
 class OperatePoly {
-	int deleteCount = 0;
-	
-	public int findValueIndex(float[] arr, int value) {
-		int valueIndex = 0;
+	public static String replaceXelse(String str) {
+		str = str.replace("+", " ");
+		str = str.replace("- ", " -");
 		
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == value) {
-				valueIndex = i;
-				break;
+		//첫번째 항이 계수가 1인 경우.
+		if(str.indexOf("x") == 0) {
+			str = "1 " + str.substring(1);
+			//동시에 거듭제곱인 경우.
+			if(str.indexOf("^") == 2) {
+				str = str.substring(0,2) + str.substring(3);
 			}
-			else valueIndex = -1;
+			//계수가 1이고 지수도 1인 경우.
+			else {
+				str = str.substring(0,2) + "1 " + str.substring(2);
+			}
+
 		}
 		
-		return valueIndex;
+		//이후 계수가 1, -1, 지수가 1 등의 각각의 경우에 대해 공백으로 대체
+		str = str.replace(" x", "1x");
+
+		str = str.replace("-x^", "-1 ");
+		str = str.replace(" x^", "1 ");
+		str = str.replace("x^", " ");
+
+		str = str.replace("-x", "-1 1");
+		
+		str = str.replace(" x", "1 1");
+		str = str.replace("x", " 1");
+
+		str = str.trim();
+		
+		return str;
 	}
-	
-	public void deleteIndexMono(float[][] arr, int index) {
-		for(int i=index; i<arr.length-1;i++) {
-			arr[i] = arr[i+1];
+
+	public static float[] tokenizerSpaceToIntArray(String str) {
+		float[] poly;
+		
+		StringTokenizer tokenizer = new StringTokenizer(str, " ");
+		if(tokenizer.countTokens()%2 != 0) {
+			poly = new float[tokenizer.countTokens() + 2]; //첫번째 원소에 항의 개수를 넣어주기위해 크기 1 증가.
+			poly[0] = (tokenizer.countTokens() + 1)/2; //첫번째 원소에 항의 개수를 넣어줌.
+			poly[poly.length-1] = 0;
 		}
+		else {
+			poly = new float[tokenizer.countTokens() + 1]; //첫번째 원소에 항의 개수를 넣어주기위해 크기 1 증가.
+			poly[0] = ( tokenizer.countTokens() )/2; //첫번째 원소에 항의 개수를 넣어줌.
+		}
+				
+		
+		for(int i=1; tokenizer.hasMoreTokens(); i++) {
+			poly[i] = Float.parseFloat(tokenizer.nextToken()); 
+		}
+		
+		return poly;
 	}
-	
-	public float[][] setPoly(String input_polyName){
-		int numOfPoly;
-		float[][] arr = null;
+
+	public float[] setPoly(String input_polyName) {
+		float[] arr = null;
+		String polyString;
+		System.out.printf("\nx에 대한 다항식 %s를 내림차순으로 입력 하시오(ex_ 3x^2 - 4x + 7) \n%s: ", input_polyName, input_polyName);
+		polyString = UtilInput.getNextLine();
 		
-		System.out.printf("\n%s 다항식의 계수가 0이 아닌 항의 개수 : ", input_polyName);
-		numOfPoly = UtilInput.getInteger();
-		arr = new float[numOfPoly][2];
-		
-		for(int i=0; i<arr.length; i++) {
-			System.out.printf("%s 다항식의 %d 번째 항의 지수와 계수 : ", input_polyName, i+1);
-			arr[i][0] = UtilInput.getNextInt();
-			arr[i][1] = UtilInput.getNextFloat();
-		}
-		
-		//UtilInput.scan.close();
+		arr = tokenizerSpaceToIntArray(replaceXelse(polyString));
+		System.out.println(" ");
 		return arr;
+		
+		
 	}
 	
-	public float[][] addPoly(float[][] a, float[][] b) {
-		float[][] C = null;
+	/*
+	 * 다항식의 덧셈을 구현하는 매서드.
+	 * 본 코드에서는 다항식 배열의 순서가 [항의 개수, 계수, 지수, 계수, 지수...] 순이므로 각각의 인덱스 값이 아래와 같음.
+	 */
+	public float[] addPoly(float[] a, float[] b, float[] c) {
+		int m = (int)a[0], n = (int)b[0]; 
+		int p = 2, q = 2, r = 2; //각 다항식의 항의 지수의 인덱스를 표현하는 변수.
 		
-		for(int i=0; i<a.length; i++) {
-			for(int j=0; j<b.length; j++) {
-				if((int)a[i][0] == (int)b[j][0]) {
-					a[i][1] += b[j][1];
-					deleteIndexMono(b, j); //b배열에서 a배열에 추가한 항 원소 삭제
-					deleteCount++; //b배열에서 삭제한 항의 수 증가
-					break;
+		while(p <= (2*m) && q <= (2*n)) {
+			//지수가 같은 경우.
+			if(a[p] == b[q]) {
+				c[r-1] = a[p-1] + b[q-1]; //계수를 더한다.
+				
+				if(c[r-1] != 0) {
+					c[r]= a[p]; r +=2; //지수를 더한다.
 				}
+				p +=2; q +=2; //다음 항으로 이동.
 			}
 			
+			else if(a[p] < b[q]) {
+				c[r-1] = b[q-1]; c[r] = b[q]; //새로운 항을 저장.
+				q +=2; r +=2; //다음 항으로 이동.
+			}
+			
+			else if(a[p] > b[q]) {
+				c[r-1] = a[p-1]; c[r] = a[p]; //새로운 항을 저장.
+				p +=2; r +=2; //다음 항으로 이동.
+			}
 		}
 		
-		C = new float[a.length + b.length - deleteCount][2]; //C배열 동적 할당
-		
-		for(int i=0; i<C.length; i++) {
-			if(i<a.length) C[i] = a[i];
-			else C[i] = b[i-a.length]; 
+		while(p <= 2*m) {
+			c[r]= a[p]; c[r-1]=a[p-1]; //a다항식의 나머지 항을 복사
+			p +=2; r +=2;
 		}
 		
-		return C;
+		while(q <= 2*n) {
+			c[r]= a[q]; c[r-1]=a[q-1]; //b다항식의 나머지 항을 복사
+			q +=2; r +=2;
+		}
+		
+		c[0] = r/2 -1;
+		
+		return c;
 	}
-	
-	public void printPoly(float[][] arr, String input_polyName) {
+
+	public void printPoly(float[] arr, String input_polyName) {
 		System.out.printf("\n%s 다항식 : ", input_polyName);
 		
-		for(int i=0; i<arr.length; i++) {
-			//두번째 항부터 음수일 경우 + 부호 미출력
-			if(i > 0) {
-				if(arr[i][1] > 0) System.out.printf(" + ");
-				else System.out.printf(" ");
+		for(int i=1; i<arr.length; i+=2) {
+			if(i==1) { 
+				if((int)arr[i+1] == 0) System.out.printf(" %.1f ", arr[i]); //지수가 0이면 상수만 출력
+				else if((int)arr[i+1] == 1) System.out.printf(" %.1fx ", arr[i]);
+				else System.out.printf(" %.1fx^%d ", arr[i], (int)arr[i+1]);
 			}
 			
-			if(arr[i][0] == 0) System.out.printf("%.1f", arr[i][1]); //지수가 0이면 상수로만 출력
-			else if(arr[i][1] == 0) continue; //계수가 0이면 출력 안함
-			else System.out.printf("%.1fX^%.0f", arr[i][1], arr[i][0]);
+			else if(i>1 && arr[i] > 0) {
+				if((int)arr[i+1] == 0) System.out.printf("+ %.1f ", arr[i]);
+				else if((int)arr[i+1] == 1) System.out.printf("+ %.1fx ", arr[i]);
+				else System.out.printf("+ %.1fx^%d ", arr[i], (int)arr[i+1]);
+			}
+			
+			else if(i>1 && arr[i] < 0) {
+				if((int)arr[i+1] == 0) System.out.printf("- %.1f ", (-1) * arr[i]);
+				else if((int)arr[i+1] == 1) System.out.printf("- %.1fx ", (-1) * arr[i]);
+				else System.out.printf("- %.1fx^%d ", (-1) * arr[i], (int)arr[i+1]);
+			}
 			
 		}
-		
-	}
 
+		System.out.println(" ");
+	}
 }
 
-
 public class Polynomial {
-	public static String nullBbuffer;
 
 	public static void main(String[] args) {
+		System.out.println("x에 대한 두 개의 다항식 A, B를 입력하고 A와 B를 더한 다항식 C를 출력하는 프로그램입니다.");
+		System.out.println("=======================================================================");
+
+		float[] A = null;
+		float[] B = null;
 		
-		float[][] A = null;
-		float[][] B = null;
-		float[][] C = null;
 		OperatePoly opPoly = new OperatePoly();
 		
 		A = opPoly.setPoly("A");
-		nullBbuffer = UtilInput.scan.nextLine();
 		B = opPoly.setPoly("B");
 		
-		C = opPoly.addPoly(A, B);
+		float[] C = new float[A.length + B.length];
 		
-		//addPoly 매서드 확인 for문
-		/*
-		 * for(float[] i: C) { for(float k : i) System.out.printf("%f ", k);
-		 * System.out.println(""); }
-		 */
-		
+		C = opPoly.addPoly(A, B, C);
 		opPoly.printPoly(C, "C");
-		
-		System.out.println("");
 	}
 
 }
