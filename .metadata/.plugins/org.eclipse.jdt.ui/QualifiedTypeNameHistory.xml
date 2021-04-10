@@ -34,7 +34,6 @@
     <fullyQualifiedTypeName name="Poly.InputMenu"/>
     <fullyQualifiedTypeName name="com.sun.imageio.spi.OutputStreamImageOutputStreamSpi"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.debug.DiagnosticsOutputDirectory"/>
-    <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="com.sun.java.swing.action.ExitAction"/>
     <fullyQualifiedTypeName name="Poly.Mono"/>
     <fullyQualifiedTypeName name="javax.management.modelmbean.ModelMBeanNotificationBroadcaster"/>
@@ -42,12 +41,15 @@
     <fullyQualifiedTypeName name="Poly.UserInput"/>
     <fullyQualifiedTypeName name="Poly.UtilInput"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.Float"/>
-    <fullyQualifiedTypeName name="java.security.PublicKey"/>
     <fullyQualifiedTypeName name="Poly.OperatePoly"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="javax.management.loading.PrivateClassLoader"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="Person"/>
+    <fullyQualifiedTypeName name="WindChillTemperatureCalculator"/>
+    <fullyQualifiedTypeName name="HeatIndexCalculator"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

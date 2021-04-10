@@ -1,19 +1,31 @@
 
 enum WindChillTemperatureIndex {
 	EXTREME_DANGER("-75.0"), DANGER("-50.0"), WARNING("-15.0"), CAUTION("15.0"), AWARE("32.0");
-	
-	public double value;
+	private double value;
 	private WindChillTemperatureIndex(String _value) {
 		this.value = Double.parseDouble(_value);
 	}
+	
+	public double getValue() {
+		return value;
+	}
+	public void setValue(double value) {
+		this.value = value;
+	}	
 }
 
 enum HeatIndex {
 	EXTREME_DANGER("130.0"), DANGER("105.0"), EXTREME_CAUTION("90.0"), CAUTION("80.0");
-	
-	public double value;
+	private double value;
 	private HeatIndex(String _value) {
 		this.value = Double.parseDouble(_value);
+	}
+	
+	public double getValue() {
+		return value;
+	}
+	public void setValue(double value) {
+		this.value = value;
 	}
 }
 
@@ -22,8 +34,6 @@ enum Mode {
 }
 
 public class Lab3 {
-	
-
 	
 	static double[][] weatherData = { 
 			{110, 100, 0}, // fahrenheit, relative humidity, wind velocity
