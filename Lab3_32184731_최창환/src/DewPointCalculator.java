@@ -43,7 +43,12 @@ public class DewPointCalculator {
 	
 	public static double calculate(double F, double RH) {
 		//이슬점 공식
-		return 0.0; //!!!!!!!!!!
+		double k = (17.62 * UserInput.convertFtoC(F)) / (243.12 + UserInput.convertFtoC(F));
+		
+		double DewPointC = (243.12 * (Math.log(RH / 100) + k)) / (17.62 - (Math.log(RH / 100) + k));
+		double DewPointF = UserInput.convertCtoF(DewPointC);
+		
+		return DewPointF;
 	}
 
 	public void calculate() {

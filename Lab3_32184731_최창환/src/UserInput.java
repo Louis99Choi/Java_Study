@@ -8,6 +8,13 @@ public class UserInput {
 	public static double getDouble() { return Double.parseDouble(scan.nextLine()); }
 	public static int getInteger() { return Integer.parseInt(scan.nextLine()); }
 	
+	public static double convertFtoC(double F) {
+		return (F - 32)/1.8;
+	}
+	public static double convertCtoF(double C) {
+		return (C * 1.8 + 32);
+	}
+	
 	//입력한 값이 min값과 max값 사이의 값이 아닌 경우 재입력 지시문을 출력하고 해당 값이 입력될때까지 반복
 	public static int getIntegerBetween(int min, int max) { 
 		int selectedNum;
