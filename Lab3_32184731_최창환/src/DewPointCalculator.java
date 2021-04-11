@@ -37,8 +37,8 @@ public class DewPointCalculator {
 	
 	@Override
 	public String toString() {
-		return "DewPointCalculator [temperature=" + temperature + ", relativeHumidity=" + relativeHumidity + ", value="
-				+ value + "]";
+		return "DewPointCalculator [temperature=" + temperature + "F, relativeHumidity=" + relativeHumidity + "%, value="
+				+ value + "F]";
 	}
 	
 	public static double calculate(double F, double RH) {
@@ -48,7 +48,7 @@ public class DewPointCalculator {
 		double DewPointC = (243.12 * (Math.log(RH / 100) + k)) / (17.62 - (Math.log(RH / 100) + k));
 		double DewPointF = UserInput.convertCtoF(DewPointC);
 		
-		return DewPointF;
+		return Math.round(DewPointF*10) / 10;
 	}
 
 	public void calculate() {
@@ -57,12 +57,39 @@ public class DewPointCalculator {
 	
 	public static void printTable() {
 		//이슬점 테이블 출력 - 중첩 for
+
+		int[] rhList = new int[19];
+		int[] tfList = new int[17];
 		
+		for (int i = 0; i < 100; i++)
+			System.out.printf("="); // Dew Point Table boundary
+		
+		System.out.print("\nT(˚F) \\ RH(%%)_");
+		for (int i = 0; i < rhList.length; i++) {
+			System.out.printf("%4d", rhList[i] = 100 - i*5);
+		}
+		System.out.println("");
+		
+		for(int i = 0; i<tfList.length; i++) {
+			
+			if(i == 16) System.out.printf("%7d        ", tfList[i] = 32);
+			else System.out.printf("%7d        ", tfList[i] = 110 - i*5);
+			
+			for(int k = 0; k<rhList.length; k++) {
+				if((int)Math.round(calculate(tfList[i], rhList[k])) >= 32)
+					System.out.printf("%4d", (int)Math.round(calculate(tfList[i], rhList[k])) );
+			}
+			
+			System.out.println("");	
+		}
+		
+		for (int i = 0; i < 100; i++)
+			System.out.printf("="); // Dew Point Table boundary
 	}
 	
 	public void getUserInput() {
 		//이슬점 계산을 위한 온도(F), 상대습도(%) 사용자 입력
-		System.out.println("DewPointCalculater 입니다. ");
+		System.out.println("\nDewPointCalculater 입니다. ");
 		System.out.print("temperature(F) 입력 :");
 		temperature = UserInput.getDouble();
 		
