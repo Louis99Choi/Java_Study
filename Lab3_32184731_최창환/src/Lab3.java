@@ -1,47 +1,66 @@
-
+//체감온도 값의 범위에 따라 출력할 경고 문구를 다르게 하기 위해 사용할 열거형 변수 생성
 enum WindChillTemperatureIndex {
+	
 	EXTREME_DANGER("-75.0"), DANGER("-50.0"), WARNING("-15.0"), 
 	CAUTION("15.0"), AWARE("32.0"), NEGLIGIBLE("32.0");
-	private double value;
+	
+	private double value; //열거형의 인스턴스 변수 선언
 	private WindChillTemperatureIndex(String _value) {
-		this.value = Double.parseDouble(_value);
+		this.value = Double.parseDouble(_value); //문자열로 실수를 저장했으므로 인스턴스 변수 value에 double형으로 형변환하여 저장.
 	}
 	
+	//각각의 변수의 범위의 경계값을 반환하는 인스턴스 메서드.
 	public double getValue() {
 		return value;
 	}
+	
+	//각각의 변수의 범위의 경계값을 재설정하는 메서드.
 	public void setValue(double value) {
 		this.value = value;
 	}
 	
+	/*
+	 * 매개변수로 체감온도 값을 double형으로 받고 해당 값이 포함되는 범위의
+	 * 열거형 변수 WindChillTemperatureIndex 형(ex_ CAUTION)으로 반환하는 static 메서드.
+	 */
 	public static WindChillTemperatureIndex getIndex(double value) {
 		return (value < EXTREME_DANGER.getValue())? EXTREME_DANGER : (value < DANGER.getValue())? DANGER : 
 			 (value < WARNING.getValue())? WARNING : (value < CAUTION.getValue())? CAUTION : NEGLIGIBLE;
 	}
 }
 
+//열지수 값의 범위에 따라 출력할 경고 문구를 다르게 하기 위해 사용할 열거형 변수 생성
 enum HeatIndex {
+	
 	EXTREME_DANGER("130.0"), DANGER("105.0"), EXTREME_CAUTION("90.0"), CAUTION("80.0"), NEGLIGIBLE("80.0");
 	private double value;
 	private HeatIndex(String _value) {
-		this.value = Double.parseDouble(_value);
+		this.value = Double.parseDouble(_value); 
+		//문자열로 실수를 저장했으므로 인스턴스 변수 value에 double형으로 형변환하여 저장.
 	}
 	
-	public double getValue() {
-		return value;
-	}
-	public void setValue(double value) {
-		this.value = value;
-	}
+	//각각의 변수의 범위의 경계값을 반환하는 인스턴스 메서드.
+	public double getValue() { return value; }
 	
-	 public static HeatIndex getIndex(double value) {
+	//각각의 변수의 범위의 경계값을 재설정하는 메서드.
+	public void setValue(double value) { this.value = value; }
+	
+	/*
+	 * 매개변수로 열지수 값을 double형으로 받고 해당 값이 포함되는 범위의
+	 * 열거형 변수 HeatIndex 형(ex_ CAUTION)으로 반환하는 static 메서드.
+	 */
+	public static HeatIndex getIndex(double value) {
 		 return (value >= EXTREME_DANGER.getValue())? EXTREME_DANGER : (value >= DANGER.getValue())? DANGER : 
 			 (value >= EXTREME_CAUTION.getValue())? EXTREME_CAUTION : 
 				 (value >= CAUTION.getValue())? CAUTION : NEGLIGIBLE;
 	 }
 }
 
+/*메뉴 선택창에서 User에게 정수 1,2,3 중 하나를 입력 받아 모드를 선택하기위해
+ *열거형 변수 생성
+ */
 enum Mode {
+	
 	DEW_POINT(1), WIND_CHILL_TEMPERATURE(2), HEAT_INDEX(3);
 	private int num;
 	private Mode(int _num) {
@@ -55,6 +74,9 @@ enum Mode {
 		this.num = num;
 	}
 	
+	/*
+	 * User로부터 메뉴 선택 번호로 int형 매개변수를 받아 그 값에 해당하는 열거형 Mode 변수를 반환하는 메서드.
+	 */
 	public static Mode getMode(int _num) {
 		return (_num == 1)? DEW_POINT : (_num == 2)? WIND_CHILL_TEMPERATURE : HEAT_INDEX;
 	}
@@ -64,7 +86,7 @@ enum Mode {
 public class Lab3 {
 	
 	static double[][] weatherData = { 
-			{110, 100, 0}, // fahrenheit, relative humidity, wind velocity
+			{110, 100, 0}, // F, relative humidity, wind velocity
 			{105, 90, 0},
 			{100, 80, 0},
 			{95, 70, 0},
@@ -86,10 +108,21 @@ public class Lab3 {
 			{-40, 40, 60}
 	};
 
+	/*
+	 * 사용자의 입력으로 값을 구할때와 weatherData로 값을 구할 때 모두 사용 가능한 메서드로
+	 * if문을 이용해 userInput이 true일때는 매개변수 data에 null값을 넣고 사용자의 입력을 통해 해당 값을 
+	 * 구해 출력하고 false일때는 매개변수 data에 weatherData의 원소인 1차원 배열을 넣어 사용한다.
+	 * switch문을 통해 매개변수 mode로부터 모드 정보를 받아 해당 모드의 값을 계산하여 출력한다.
+	 */
 	 static void calculate(Mode mode, double[] data, boolean userInput) {
 	      
 	      if(!userInput) {
 	         switch(mode) {
+	         /*
+	          * 각각의 case에서 해당 클래스로 객체를 생성하고
+	          * 매개변수로 입력된 data를 .set--() 매서드로 객체의 인스턴스 변수를 초기화 한 후 
+	          * .calculate() 매서드로 .value 에 결과값을 저장한 후 출력한다.
+	          */
 	         case DEW_POINT:
 	            DewPointCalculator dp = new DewPointCalculator();
 	            
@@ -120,14 +153,18 @@ public class Lab3 {
 	            
 	            break;
 	            
-	         default : 
-	            System.out.println("Wrong Input!!!"); break;
+	         default :
+	        	break;
 	            
 	         }
 	      }
 	      
 	      else {
 	         switch(mode) {
+	         /*
+	          * 각 case에서는 해당 클래스로 객체를 생성해 .getUserInput() 메서드로 입력을 받고,
+	          * .calculate() 메서드로 .value에 결과값을 저장하며 결과값을 출력한다.
+	          */
 	         case DEW_POINT:
 	            DewPointCalculator.printTable();
 	            

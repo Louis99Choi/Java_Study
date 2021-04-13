@@ -8,6 +8,7 @@
 		<item key="isRegEx" value="true"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="fahrenheit"/>
 			<item value="math"/>
 			<item value="around"/>
 			<item value="get"/>

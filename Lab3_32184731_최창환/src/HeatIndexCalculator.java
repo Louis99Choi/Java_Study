@@ -1,15 +1,17 @@
 
 public class HeatIndexCalculator {
-	private double temperature; // fahrenheit
+	private double temperature; // F
 	private double relativeHumidity; // %
 	private double value; // HeatIndex 값
 	
 	public HeatIndexCalculator(double temperature, double relativeHumidity, double value) {
+		//객체 생성시 파라미터로 객체의 인스턴스 변수를 초기화하는 생성자
 		this.temperature = temperature;
 		this.relativeHumidity = relativeHumidity;
 		this.value = value;
 	}
 	public HeatIndexCalculator() {
+		//객체 생성시 파라미터를 받지 않으며 default값인 0.0으로 초기화하는 생성자
 		this(0.0, 0.0, 0.0);
 	}
 	
@@ -58,7 +60,7 @@ public class HeatIndexCalculator {
 	}
 	
 	public static void printTable() {
-		// 열지수 테이블 출력 - 중첩 for
+		// 열지수 테이블을 출력하는 static 메서드.
 		int[] rhList = new int[13];
 		int[] tfList = new int[16];
 		
@@ -88,7 +90,7 @@ public class HeatIndexCalculator {
 	}
 	
 	public void getUserInput() {
-		// 열지수 계산을 위한 온도(F), 상대습도(%) 사용자 입력
+		// 열지수 계산을 위한 온도(F), 상대습도(%) 값을 User에게 입력 받는 메서드.
 		System.out.println("\nHeatIndexCalculator 입니다. ");
 		System.out.print("temperature(F) 입력 :");
 		temperature = UserInput.getDouble();

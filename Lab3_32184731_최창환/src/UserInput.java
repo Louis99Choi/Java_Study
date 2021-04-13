@@ -8,6 +8,9 @@ public class UserInput {
 	public static double getDouble() { return Double.parseDouble(scan.nextLine()); }
 	public static int getInteger() { return Integer.parseInt(scan.nextLine()); }
 	
+	/*
+	 * 화씨온도를 섭씨온도로, 섭씨온도를 화씨온도로 변환하는 static 메서드.
+	 */
 	public static double convertFtoC(double F) {
 		return (F - 32)/1.8;
 	}
@@ -20,7 +23,7 @@ public class UserInput {
 		int selectedNum;
 		do {
 			selectedNum = getInteger();
-			if(min > selectedNum || selectedNum > max) System.out.println("Wrong Input, Please Input Again.");
+			if(min > selectedNum || selectedNum > max) System.out.printf("잘못된 입력입니다! 원하는 메뉴의 숫자를 다시 입력하시오(1~3) : ");
 		}while(min > selectedNum || selectedNum > max);
 		
 		return selectedNum;
