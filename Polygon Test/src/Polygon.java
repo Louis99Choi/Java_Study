@@ -1,14 +1,20 @@
+//자바프로그래밍 1분반 32184731 최창환
+//중간고사 대체 과제_
+
 import java.util.Arrays;
+import enumulation.PolygonType;
 
 public class Polygon {
 	private Point[] points;
 	private Bound bound;
-	private PolygonType type;
+	private PolygonType polygonType;
 	
+	public Polygon() {
+	}
 	public Polygon(Point[] points) {
 		this.points = points;
 		this.bound = Bound.findBound(points);
-		this.type = PolygonType.valueOf(points.length);
+		this.polygonType = PolygonType.valueOf(points.length);
 	}
 
 	public Point[] getPoints() {
@@ -20,13 +26,13 @@ public class Polygon {
 	public Bound getBound() {
 		return bound;
 	}
-	public PolygonType getType() {
-		return type;
+	public PolygonType getPolygonType() {
+		return polygonType;
 	}
 
 	@Override
 	public String toString() {
-		return "Polygon [points=" + Arrays.toString(points) + ", bound=" + bound + ", type=" + type + "]";
+		return "Polygon [points=" + Arrays.toString(points) + ", bound=" + bound + ", type=" + polygonType + "]";
 	}
 
 	

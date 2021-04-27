@@ -68,13 +68,13 @@
 		<item key="expanded0" value="true"/>
 	</section>
 	<section name="ProblemSeveritiesConfigurationBlock">
-		<item key="expanded0" value="true"/>
+		<item key="expanded0" value="false"/>
 		<item key="expanded1" value="false"/>
 		<item key="expanded2" value="false"/>
 		<item key="expanded3" value="false"/>
 		<item key="expanded4" value="false"/>
 		<item key="expanded5" value="false"/>
-		<item key="expanded6" value="false"/>
+		<item key="expanded6" value="true"/>
 		<item key="expanded7" value="false"/>
 		<item key="expanded8" value="false"/>
 	</section>
@@ -94,7 +94,7 @@
 		<item key="OmitCallToSuper" value="false"/>
 	</section>
 	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
-		<item key="DIALOG_X_ORIGIN" value="329"/>
+		<item key="DIALOG_X_ORIGIN" value="247"/>
 		<item key="DIALOG_Y_ORIGIN" value="74"/>
 		<item key="DIALOG_WIDTH" value="531"/>
 		<item key="DIALOG_HEIGHT" value="678"/>
@@ -117,7 +117,7 @@
 		<item key="RemoveFinal" value="false"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
-		<item key="DIALOG_X_ORIGIN" value="320"/>
+		<item key="DIALOG_X_ORIGIN" value="238"/>
 		<item key="DIALOG_Y_ORIGIN" value="62"/>
 		<item key="DIALOG_WIDTH" value="540"/>
 		<item key="DIALOG_HEIGHT" value="696"/>
@@ -139,5 +139,18 @@
 		<item key="DIALOG_WIDTH" value="539"/>
 		<item key="DIALOG_HEIGHT" value="513"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="AddUnimplementedConstructorsDialog">
+		<item key="OmitCallToSuper" value="false"/>
+	</section>
+	<section name="DialogBounds_AddUnimplementedConstructorsDialog">
+		<item key="DIALOG_X_ORIGIN" value="497"/>
+		<item key="DIALOG_Y_ORIGIN" value="105"/>
+		<item key="DIALOG_WIDTH" value="531"/>
+		<item key="DIALOG_HEIGHT" value="627"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item key="GenerateJavadoc" value="false"/>
 	</section>
 </section>
