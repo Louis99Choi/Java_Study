@@ -1,45 +1,48 @@
+//자료구조_1분반_32184731_최창환_동치클래스구현과제
+
 package LinkedList;
 
 //Linked List의 각 노드 객체 클래스
-public class SingleNode<E> {
-	private E data;
-	private SingleNode<E> link;
+public class SingleNode {
+	private int data;
+	private SingleNode link;
 	
 	
-	public SingleNode(E data, SingleNode<E> link) {
-		super();
+	public SingleNode(int data, SingleNode link) {
 		this.data = data;
-		this.link = null;
+		this.link = link;
 	}
+	
 	//생성자 Overloading
-	public SingleNode(SingleNode<E> newNode) {
+	public SingleNode(SingleNode newNode) {
 		this.data = newNode.getData();
 		this.link = newNode.getLink();
 	}
+	
 	//생성자 Overloading
-		public SingleNode() {
-			this.data = null;
-			this.link = null;
-		}
+	public SingleNode() {
+		this.data = -1;
+		this.link = null;
+	}
 
 
-	public E getData() {
+	public int getData() {
 		return data;
 	}
-	public void setData(E data) {
+	
+	public void setData(int data) {
 		this.data = data;
 	}
 
-	public SingleNode<E> getLink() {
+	public SingleNode getLink() {
 		return link;
 	}
-	public void setLink(SingleNode<E> link) {
+	public void setLink(SingleNode link) {
 		this.link = link;
 	}
 
-	public void setNode(SingleNode<E> newNode) {
+	public void setNode(SingleNode newNode) {
 		setData(newNode.getData());
 		setLink(newNode.getLink());
 	}
-	
 }

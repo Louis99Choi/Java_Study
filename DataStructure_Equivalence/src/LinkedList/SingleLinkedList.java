@@ -1,73 +1,63 @@
+//자료구조_1분반_32184731_최창환_동치클래스구현과제
+
 package LinkedList;
 
-public class SingleLinkedList<E> {
-	private SingleNode<E> top;
-	private int size;
-	
+public class SingleLinkedList {
+	private SingleNode top;
 	
 	public SingleLinkedList() {
 		this.top = null;
-		this.size = 0;
-	}
-	//생성자 Overloading
-	public SingleLinkedList(SingleNode<E> newNode) {
-		this.top = newNode;
-		this.size = 1;
 	}
 	
-	public void setTop(SingleNode<E> newNode) {
+	//생성자 Overloading
+	public SingleLinkedList(SingleNode newNode) {
 		this.top = newNode;
 	}
-	public SingleNode<E> getTop() {
+	
+	public void setTop(SingleNode newNode) {
+		this.top = newNode;
+	}
+	
+	public SingleNode getTop() {
 		return this.top;
 	}
 	
-	public void push(E newItem) {
-		SingleNode<E> newNode = new SingleNode<E>(newItem, getTop());
+	public void push(int newItem) {
+		SingleNode newNode = new SingleNode(newItem, getTop());
 		
-		if(top == null) { top = new SingleNode<E>(); }
-		top.setNode(newNode);
-		size++;
-	}
-	//push 매서드 Overloading
-	public void push(SingleNode<E> newNode) {
-		if(newNode == null) return;
-		
-		newNode.setLink(top);
-		
-		if(top == null) { top = new SingleNode<E>(); }
-		top = new SingleNode<E>(newNode);
-		size++;
-	}
-
-	public E pop() {
-		SingleNode<E> popNode = new SingleNode<E>();
-		
-		if(top != null) {
-			popNode.setNode(top);
-			
-			if(top.getLink() == null) { top = null; }
-			else { top = new SingleNode<E>(top.getLink()); }
-			size--;
-		}
-		
-		return popNode.getData();
-		
+		top = newNode;
 	}
 	
-	public SingleNode<E> popNode() {
+	//push 매서드 Overloading
+	public void push(SingleNode newNode) {
+		newNode.setLink(top);
+		
+		top = newNode;
+	}
+
+	public int pop() {
 		if(top != null) {
-			SingleNode<E> popNode = new SingleNode<E>();
-			
+			SingleNode popNode = new SingleNode();
 			popNode.setNode(top);
-			
+		
+			if(top.getLink() == null) { top = null; }
+			else { top.setNode(top.getLink()); }
+		
+			return popNode.getData();
+		}
+		
+		return -1;
+	}
+	
+	public SingleNode popNode() {
+		if(top != null) {
+			SingleNode popNode = top;
 			top = top.getLink();
-			size--;
+		
 			return popNode;
 		}
 		
 		return null;
-		
 	}
 
 

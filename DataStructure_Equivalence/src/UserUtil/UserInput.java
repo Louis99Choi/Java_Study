@@ -1,3 +1,5 @@
+//자료구조_1분반_32184731_최창환_동치클래스구현과제
+
 package UserUtil;
 
 import java.util.*;
