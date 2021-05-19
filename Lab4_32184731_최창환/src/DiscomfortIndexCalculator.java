@@ -92,7 +92,7 @@ public class DiscomfortIndexCalculator extends WeatherCalculator {
 	// 불쾌지수 계산을 위한 온도(F), 상대습도(%) 사용자 입력 매서드.
 	@Override
 	protected void getUserInput() {
-		System.out.println("DiscomfortIndex");
+		System.out.println("\n[Calculate DiscomfortIndex]");
 		System.out.print("Please enter temperature (F): ");
 		setTemperature(UserInput.getDouble());
 		
@@ -103,7 +103,7 @@ public class DiscomfortIndexCalculator extends WeatherCalculator {
 	@Override
 	public String toString() {
 		return "DiscomfortIndexCalculator [temperature=" + temperature + "F, relativeHumidity=" + relativeHumidity
-				+ "%, value=" + value + "]";
+				+ "%, value=" + value + ", index=" + DiscomfortIndex.getIndex(value) + "]";
 	}
 	
 }

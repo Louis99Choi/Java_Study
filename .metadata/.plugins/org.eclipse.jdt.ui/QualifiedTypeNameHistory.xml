@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="sun.jvm.hotspot.runtime.StaticBaseConstructor"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="com.sun.tools.javac.tree.JCTree.LetExpr"/>
-    <fullyQualifiedTypeName name="java.util.FormatFlagsConversionMismatchException"/>
-    <fullyQualifiedTypeName name="sun.security.provider.JavaKeyStore.CaseExactJKS"/>
     <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
     <fullyQualifiedTypeName name="Poly.InputMenu"/>
     <fullyQualifiedTypeName name="com.sun.imageio.spi.OutputStreamImageOutputStreamSpi"/>
@@ -18,7 +13,6 @@
     <fullyQualifiedTypeName name="java.lang.Float"/>
     <fullyQualifiedTypeName name="Poly.OperatePoly"/>
     <fullyQualifiedTypeName name="javax.management.loading.PrivateClassLoader"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="Person"/>
     <fullyQualifiedTypeName name="java.security.PublicKey"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
@@ -26,13 +20,10 @@
     <fullyQualifiedTypeName name="sun.security.ssl.KAKeyDerivation"/>
     <fullyQualifiedTypeName name="HeatIndex"/>
     <fullyQualifiedTypeName name="WindChillTemperatureIndex"/>
-    <fullyQualifiedTypeName name="WindChillTemperatureCalculator"/>
     <fullyQualifiedTypeName name="HeatIndexCalculator"/>
     <fullyQualifiedTypeName name="java.lang.Enum"/>
-    <fullyQualifiedTypeName name="Mode"/>
     <fullyQualifiedTypeName name="jdk.internal.org.jline.reader.impl.history.DefaultHistory"/>
     <fullyQualifiedTypeName name="eNum.PolygonType"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.oops.java_lang_Class"/>
     <fullyQualifiedTypeName name="sun.tools.tree.ThisExpression"/>
     <fullyQualifiedTypeName name="jdk.nashorn.internal.runtime.PropertySwitchPoints"/>
@@ -60,4 +51,13 @@
     <fullyQualifiedTypeName name="LinkedList.SingleLinkedList"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.core.common.cfg.Loop"/>
     <fullyQualifiedTypeName name="LinkedList.SingleNode"/>
+    <fullyQualifiedTypeName name="Mode"/>
+    <fullyQualifiedTypeName name="WindChillTemperatureCalculator"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="sun.util.resources.cldr.ext.TimeZoneNames_hsb"/>
+    <fullyQualifiedTypeName name="WeatherCalculator"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="com.sun.jdi.Value"/>
+    <fullyQualifiedTypeName name="DecompositionIndex"/>
+    <fullyQualifiedTypeName name="DiscomfortIndex"/>
 </qualifiedTypeNameHistroy>

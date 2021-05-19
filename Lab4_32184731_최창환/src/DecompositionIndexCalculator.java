@@ -94,7 +94,7 @@ public class DecompositionIndexCalculator extends WeatherCalculator {
 	// 부패(식중독)지수 계산을 위한 온도(F), 상대습도(%) 사용자 입력 매서드.
 	@Override
 	protected void getUserInput() {
-		System.out.println("\n[DiscomfortIndex]");
+		System.out.println("\n[Calculate DiscomfortIndex]");
 		System.out.print("Please enter temperature (F): ");
 		setTemperature(UserInput.getDouble());
 		

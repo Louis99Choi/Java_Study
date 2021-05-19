@@ -8,6 +8,7 @@
 		<item key="isRegEx" value="true"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="부패(식중독)"/>
 			<item value="setNode"/>
 			<item value="getNode"/>
 			<item value="SingleList"/>
@@ -22,9 +23,9 @@
 			<item value="‐"/>
 			<item value="fahrenheit"/>
 			<item value="math"/>
-			<item value="around"/>
 		</list>
 		<list key="replacehistory">
+			<item value="부패"/>
 			<item value="S"/>
 			<item value="top"/>
 			<item value="-"/>

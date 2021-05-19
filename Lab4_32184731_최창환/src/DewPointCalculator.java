@@ -87,7 +87,7 @@ public class DewPointCalculator extends WeatherCalculator{
 	//이슬점 계산을 위한 온도(F), 상대습도(%) 값을 User에게 입력 받는 메서드.
 	@Override
 	public void getUserInput() {
-		System.out.println("Calculate DewPoint");
+		System.out.println("\n[Calculate DewPoint]");
 		System.out.print("Please enter temperature (F): ");
 		setTemperature(UserInput.getDouble());
 		

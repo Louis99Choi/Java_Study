@@ -72,7 +72,7 @@ public class WindChillTemperatureCalculator extends WeatherCalculator{
 	// 체감온도 계산을 위한 온도(F), 풍속(mph) 값을 User에게 입력 받는 메서드.
 	@Override
 	public void getUserInput() {
-		System.out.println("WindChillTemperature");	
+		System.out.println("\n[Calculate WindChillTemperature]");	
 		System.out.print("Please enter temperature (F): ");
 		setTemperature(UserInput.getDouble());
 		
