@@ -6,8 +6,9 @@
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="true"/>
 		<item key="isRegEx" value="true"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="toString"/>
 		<list key="findhistory">
+			<item value="toString"/>
 			<item value="부패(식중독)"/>
 			<item value="setNode"/>
 			<item value="getNode"/>
@@ -22,7 +23,6 @@
 			<item value="findTriangles"/>
 			<item value="‐"/>
 			<item value="fahrenheit"/>
-			<item value="math"/>
 		</list>
 		<list key="replacehistory">
 			<item value="부패"/>
