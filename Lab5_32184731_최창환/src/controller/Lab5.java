@@ -42,44 +42,62 @@ public class Lab5 {
 	};
 
 	public static void main(String[] args) {
-		
-		// calculate DewPoint, WindChillTemperature, HeatIndex using array of weather data (Temperature, relativeHumidity, windVelocity)
+
+		// calculate DewPoint, WindChillTemperature, HeatIndex using array of weather
+		// data (Temperature, relativeHumidity, windVelocity)
 		System.out.println("weather data ..");
 		WeatherCalculatorListManager listManager = new WeatherCalculatorListManager();
+
 		for (WeatherData data : weatherData) {
+
 			for (Mode mode : Mode.values()) {
 				WeatherCalculator calculator = WeatherCalculatorFactory.getInstance(mode, data);
 				listManager.add(calculator);
 			}
+
 		}
+
 		// print
-		System.out.println("listManager print..");		
+		System.out.println("listManager print..");
 		listManager.print();
+
 		// print
 		List<WeatherCalculator> resultList = listManager.select(e -> e instanceof DewPointCalculator);
-		System.out.println("resultList print..");		
+		System.out.println("resultList print..");
 		resultList.forEach(System.out::println);
+
 		WeatherCalculator randomCalculator = WeatherCalculatorListManager.getRandom(resultList);
-		System.out.println("randomCalculator (from resultList)=" + randomCalculator);		
-		
+		if (randomCalculator == null)
+			System.out.print("DewPointCalculator가 없습니다.");
+		else
+			System.out.println("randomCalculator (from resultList)=" + randomCalculator);
+
 		// calculate using user input
 		System.out.println("user input..");
 		WeatherCalculatorSetManager setManager = new WeatherCalculatorSetManager();
+
 		do {
-			System.out.print("Please enter mode [1: DP, 2: WCT, 3: HI, 4: DI, 5: SI]: ");	
-			int mode = UserInput.getIntegerBetween(1,5);
+			System.out.print("Please enter mode [1: DP, 2: WCT, 3: HI, 4: DI, 5: SI]: ");
+			int mode = UserInput.getIntegerBetween(1, 5);
+
 			WeatherCalculator calculator = WeatherCalculatorFactory.getInstance(Mode.valueOf(mode));
 			calculator.process();
 			setManager.add(calculator);
-		} while(!UserInput.getExitKey());		
+		} while (!UserInput.getExitKey());
+
 		// print
-		System.out.println("setManager print..");		
+		System.out.println("setManager print..");
 		setManager.print();
+
 		Set<WeatherCalculator> resultSet = setManager.select(e -> e instanceof DewPointCalculator);
-		System.out.println("resultSet print..");		
+		System.out.println("resultSet print..");
 		resultSet.forEach(System.out::println);
 		randomCalculator = WeatherCalculatorSetManager.getRandom(resultSet);
-		System.out.println("randomCalculator (from resultSet)=" + randomCalculator);		
+
+		if (randomCalculator == null)
+			System.out.print("DewPointCalculator가 없습니다.");
+		else
+			System.out.println("randomCalculator (from resultSet)=" + randomCalculator);
 
 		System.out.println("done..");
 	}

@@ -1,13 +1,9 @@
 package dto;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class WeatherData {
-	protected DateFormat stringToDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	protected Date dataTime;
+//	protected DateFormat stringToDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//	protected Date dataTime;
+	protected String dataTime;
 	protected double temperature;
 	protected double relativeHumidity;
 	protected double windVelocity; 
@@ -17,13 +13,7 @@ public class WeatherData {
 	}
 	
 	public WeatherData(String dataTime, double temperature, double relativeHumidity, double windVelocity) {
-		try {
-			this.dataTime = stringToDateFormat.parse(dataTime);
-		} catch (ParseException e) {
-			this.dataTime = null;
-			e.printStackTrace();
-		}
-		
+		this.dataTime = dataTime;
 		this.temperature = temperature;
 		this.relativeHumidity = relativeHumidity;
 		this.windVelocity = windVelocity;
@@ -36,10 +26,10 @@ public class WeatherData {
 		this.windVelocity = data.windVelocity;
 	}
 	
-	public Date getDataTime() {
+	public String getDataTime() {
 		return dataTime;
 	}
-	public void setDataTime(Date dataTime) {
+	public void setDataTime(String dataTime) {
 		this.dataTime = dataTime;
 		
 	}
