@@ -1,3 +1,5 @@
+// Lab5_32184731_최창환
+
 package dto;
 
 import java.util.Objects;
@@ -5,15 +7,23 @@ import java.util.Objects;
 import Enum_Index.HeatIndex;
 import controller.UserInput;
 
+// WeatherCalculator 클래스를 상속받고
 // 열지수 Table 출력 및 열지수 계산을 위한 입력, 열지수 결과값 출력을 위한 클래스
 public class HeatIndexCalculator extends WeatherCalculator {
 
-	// 객체 생성시 파라미터를 받지 않으며 default값인 0.0으로 초기화하는 생성자
+	/* 
+	 * 객체 생성시 각각의 인스턴스 변수를 null과 0.0으로 초기화한 
+	 * WeatherData 클래스 객체를 파라미터로 본 클래스의 부모 클래스인 
+	 * WeatherCalculator 클래스의 생성자를 호출해 객체 초기화.
+	 */
 	public HeatIndexCalculator() {
 		super(new WeatherData());
 	}
 
-	// 객체 생성시 파라미터로 객체의 인스턴스 변수를 초기화하는 생성자
+	/*
+	 *  WeatherData 객체를 매개변수로 받는 본 클래스의 
+	 *  부모 클래스의 생성자를 호출해 본 클래스의 객체를 초기화. 
+	 */
 	public HeatIndexCalculator(WeatherData weatherData) {
 		super(weatherData);
 	}
@@ -53,11 +63,13 @@ public class HeatIndexCalculator extends WeatherCalculator {
 		return Math.round(value * 10) / 10.0;
 	}
 
+	// 부모클래스가 구현한 인터페이스의 매소드를 Overriding.
 	@Override
 	public void calculate() {
 		this.value = calculate(weatherData.getTemperature(), weatherData.getRelativeHumidity());
 	}
 
+	// 부모클래스가 구현한 인터페이스의 매소드를 Overriding.
 	// 열지수 테이블을 출력하는 메서드.
 	@Override
 	public void printTable() {
@@ -83,6 +95,7 @@ public class HeatIndexCalculator extends WeatherCalculator {
 		}
 	}
 
+	// 부모클래스가 구현한 인터페이스의 매소드를 Overriding.
 	// 열지수 계산을 위한 온도(F), 상대습도(%) 값을 User에게 입력 받는 메서드.
 	@Override
 	public void getUserInput() {
@@ -94,8 +107,9 @@ public class HeatIndexCalculator extends WeatherCalculator {
 		setRelativeHumidity(UserInput.getDouble());
 	}
 
+	// Object.equals overriding
 	@Override
-	public boolean equals(Object other) { // Object.equals overriding
+	public boolean equals(Object other) { 
 		if (this == other)
 			return true;
 		if (other instanceof HeatIndexCalculator) {
@@ -107,9 +121,11 @@ public class HeatIndexCalculator extends WeatherCalculator {
 		return false;
 	}
 
+	// Object.hashCode overriding
 	@Override
-	public int hashCode() { // Object.hashCode overriding
-		return Objects.hash(weatherData.getTemperature(), weatherData.getRelativeHumidity(), getValue());
+	public int hashCode() { 
+		return Objects.hash(weatherData.getTemperature(), 
+				weatherData.getRelativeHumidity(), getValue());
 	}
 
 	@Override

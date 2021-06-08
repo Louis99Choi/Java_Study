@@ -1,8 +1,12 @@
+// Lab5_32184731_최창환
+
 package dto;
 
-// 추상 클래스로 기상 지수 클래스들의 공통 변수 value와 process 매서드를 인스턴스로 갖고,
-// 추상 매서드로 지수표 출력, 사용자 입력, 지수값 계산 매서드를 가지는 
-// 각각의 지수값 계산 클래스들의 부모 클래스이다.
+/*
+ * 인스턴스로 각 생활기상 지수 결과값을 저장할 공통변수 value와 날짜와 기상 정보에 대한 
+ * WeatherData 객체를 갖고 인스턴스 매서드인 process()와 static 매서드인 
+ * 섭씨<->화씨 변환 매서드를 구현한 추상 클래스이며 각 생활기상 지수 계산기 클래스의 부모 클래스이다.
+ */
 public abstract class WeatherCalculator implements IWeatherCalculator {
 	protected WeatherData weatherData;
 	protected double value;

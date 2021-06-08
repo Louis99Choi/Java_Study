@@ -1,3 +1,5 @@
+// Lab5_32184731_최창환
+
 package Enum_Index;
 //열지수 값의 범위에 따라 출력할 경고 문구를 다르게 하기 위해 사용할 열거형 변수 생성.
 public enum HeatIndex {

@@ -1,8 +1,8 @@
+// Lab5_32184731_√÷√¢»Ø
+
 package dto;
 
 public class WeatherData {
-//	protected DateFormat stringToDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//	protected Date dataTime;
 	protected String dataTime;
 	protected double temperature;
 	protected double relativeHumidity;

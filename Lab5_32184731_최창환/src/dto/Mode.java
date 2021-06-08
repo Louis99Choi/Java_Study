@@ -1,3 +1,5 @@
+// Lab5_32184731_√÷√¢»Ø
+
 package dto;
 
 public enum Mode {

@@ -1,3 +1,5 @@
+// Lab5_32184731_최창환
+
 package dao;
 
 import java.util.HashSet;
@@ -35,12 +37,24 @@ public class WeatherCalculatorSetManager {
 		}
 	}
 
+	/*
+	 *  Set(집합)에서 해당 predicate 조건에 맞는 모든 calculator를 원소로 하는 Set 반환.
+	 *  ?는 와일드 카드로 super 이므로 WeatherCalculator 또는 그 super 타입만 가능하며
+	 *  매개변수에 제네릭 자료형을 받고 boolean 값을 반환하는 매서드를 가지고있는 함수형 인터페이스 
+	 *  Predicate에 의해 람다식을 매개변수로 입력받고, 인스턴스 Set의 원소 중에서 해당 람다식을 만족하는
+	 *  객체만을 새로운 Set에 넣어 그 Set를 반환하는 매서드.   
+	 */
 	public Set<WeatherCalculator> select(Predicate<? super WeatherCalculator> predicate) {
-		// 리스트에서 해당 predicate 조건에 맞는 모든 calculator 세트 반환
-		
+
+		// 인스턴스 Set calculators에 대한 Iterator 객체 생성
 		Iterator<WeatherCalculator> iterator = calculators.iterator();
+		
 		HashSet<WeatherCalculator> pSet = new HashSet<WeatherCalculator>();
 		
+		/*
+		 *  iterator로 Set의 모든 원소에 대해 predicate를 만족하는지 
+		 *  확인 후 만족하면 새로운 리스트 pSet에 원소로 추가.
+		 */
 		while(iterator.hasNext()) {
 			WeatherCalculator a = iterator.next();
 			if(predicate.test(a)) pSet.add(a);
@@ -49,7 +63,8 @@ public class WeatherCalculatorSetManager {
 		return pSet;
 	}
 
-	public static WeatherCalculator getRandom(Set<WeatherCalculator> set) {// 인자로 보내준 셋에서 랜덤하게 하나 선택해서 반환
+	// 인자로 보내준 셋에서 랜덤하게 하나 선택해서 반환
+	public static WeatherCalculator getRandom(Set<WeatherCalculator> set) {
 		Iterator<WeatherCalculator> iterator = set.iterator();
 		int randomIndex = (int) (Math.random() * set.size());
 		int loopCount = 0; // set의 원소를 인덱싱 하기 위한 변수
