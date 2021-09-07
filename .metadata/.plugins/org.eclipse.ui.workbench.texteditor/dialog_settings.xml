@@ -6,8 +6,11 @@
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="true"/>
 		<item key="isRegEx" value="true"/>
-		<item key="selection" value="toString"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="tessel"/>
+			<item value="tessellation"/>
+			<item value="tessell"/>
 			<item value="toString"/>
 			<item value="부패(식중독)"/>
 			<item value="setNode"/>
@@ -20,11 +23,9 @@
 			<item value="count"/>
 			<item value="n"/>
 			<item value="getPolygonType"/>
-			<item value="findTriangles"/>
-			<item value="‐"/>
-			<item value="fahrenheit"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="부패"/>
 			<item value="S"/>
 			<item value="top"/>
