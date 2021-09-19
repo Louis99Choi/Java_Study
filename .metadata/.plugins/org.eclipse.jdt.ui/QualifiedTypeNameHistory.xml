@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.my.hello.Hello"/>
-    <fullyQualifiedTypeName name="com.my.hello.PersonTest"/>
-    <fullyQualifiedTypeName name="sun.security.krb5.internal.Krb5"/>
-    <fullyQualifiedTypeName name="kr.ac.dankook.ace.dao.PersonArrayManager"/>
-    <fullyQualifiedTypeName name="kr.ac.dankook.ace.dto.Student"/>
-    <fullyQualifiedTypeName name="kr.ac.dankook.ace.dto.Staff"/>
-    <fullyQualifiedTypeName name="kr.ac.dankook.ace.dao.PersonListManager"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.lang.Comparable"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.classfile.StackMapEntry"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="com.my.app.Order"/>
     <fullyQualifiedTypeName name="kr.ac.dankook.ace.dto.Person"/>
@@ -29,7 +17,6 @@
     <fullyQualifiedTypeName name="dto.WeatherCalculator"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.oops.java_lang_Class"/>
     <fullyQualifiedTypeName name="IPolygonCalculator"/>
     <fullyQualifiedTypeName name="sun.util.locale.provider.LocaleServiceProviderPool.LocalizedObjectGetter"/>
@@ -60,4 +47,17 @@
     <fullyQualifiedTypeName name="Polygon"/>
     <fullyQualifiedTypeName name="PolygonMath"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="Vehicle"/>
+    <fullyQualifiedTypeName name="MoveBehavior"/>
+    <fullyQualifiedTypeName name="DrivableBehavior"/>
+    <fullyQualifiedTypeName name="FloatableBehavior"/>
+    <fullyQualifiedTypeName name="Gas"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.Status"/>
+    <fullyQualifiedTypeName name="Floatable"/>
+    <fullyQualifiedTypeName name="Drivable"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.sun.crypto.provider.PBEKeyFactory.PBEWithHmacSHA1AndAES_128"/>
+    <fullyQualifiedTypeName name="AmphibiousVehicle"/>
+    <fullyQualifiedTypeName name="Status"/>
 </qualifiedTypeNameHistroy>

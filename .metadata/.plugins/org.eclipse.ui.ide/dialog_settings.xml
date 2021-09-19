@@ -31,11 +31,11 @@
 		<item key="FilterByLocation" value="false"/>
 		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
 		<section name="DialogBoundsSettings">
-			<item key="DIALOG_HEIGHT" value="500"/>
-			<item key="DIALOG_WIDTH" value="600"/>
-			<item key="DIALOG_X_ORIGIN" value="484"/>
+			<item key="DIALOG_HEIGHT" value="523"/>
+			<item key="DIALOG_WIDTH" value="493"/>
+			<item key="DIALOG_X_ORIGIN" value="308"/>
 			<item key="DIALOG_Y_ORIGIN" value="190"/>
-			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 		</section>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
@@ -54,6 +54,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Java\Java_Study\Lab2-SOLID-DIP"/>
+			<item value="C:\Java\Java_Study\Lab2-SOLID-ISP"/>
+			<item value="C:\Java\Java_Study\Lab2-SOLID-LSP"/>
+			<item value="C:\Java\Java_Study\Lab2-SOLID-SRP"/>
+			<item value="C:\Java\Java_Study\Lab2-SOLID-OCP"/>
 			<item value="C:\Java\Toy_Project\test"/>
 			<item value="C:\Java\Java_Study\Polygon Test"/>
 			<item value="C:\Java\Java_Study"/>

@@ -27,7 +27,6 @@ public class AmphibiousVehicle extends Vehicle {
 		
 	}
 
-
 	@Override
 	public String name() {
 		// TODO Auto-generated method stub
