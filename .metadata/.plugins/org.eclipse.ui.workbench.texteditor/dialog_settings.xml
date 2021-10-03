@@ -8,23 +8,24 @@
 		<item key="isRegEx" value="true"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="display"/>
+			<item value="sleep"/>
+			<item value="fullPath"/>
+			<item value="get"/>
+			<item value="getRed"/>
+			<item value="set"/>
+			<item value="\t\t\R\t\tpublic static void main\(String\[\] args\) \{\R\t\t\tImageProcessor ip =\R\t\t\t\t\tnew ImageProcessor\(&quot;dog\.bmp&quot;\);\R\t\tip\.setImageProcessor\(new Grayscale\(\)\);\R\t\tip\.processImage\(\);\R\t\tip\.setImageProcessor\(new Blur\(\)\);\R\t\tip\.processImage\(\);\R\t\tip\.addConverter\(new GifConverter\(\)\);\R\t\tip\.addConverter\(new PngConverter\(\)\);\R\t\tip\.addConverter\(new JpgConverter\(\)\);\R\t\tip\.convertTo\(&quot;bmp&quot;\);\R\t\tip\.convertTo\(&quot;jpg&quot;\);\R\t\tip\.convertTo\(&quot;gif&quot;\);\R\t\tip\.convertTo\(&quot;png&quot;\)\R\t\t\}\R"/>
+			<item value="\Rpublic class MainTest \{\R\R\tpublic static void main\(String\[\] args\) \{\R\t\tImageProcessor ip =\R\t\t\t\tnew ImageProcessor\(&quot;dog\.bmp&quot;\);\R\t\t\t\tip\.setImageProcessor\(new Grayscale\(\)\);\R\t\t\t\tip\.processImage\(\);\R\t\t\t\tip\.setImageProcessor\(new Blur\(\)\);\R\t\t\t\tip\.processImage\(\);\R\t\t\t\tip\.addConverter\(new GifConverter\(\)\);\R\t\t\t\tip\.addConverter\(new PngConverter\(\)\);\R\t\t\t\tip\.addConverter\(new JpgConverter\(\)\);\R\t\t\t\tip\.convertTo\(&quot;bmp&quot;\);\R\t\t\t\tip\.convertTo\(&quot;jpg&quot;\);\R\t\t\t\tip\.convertTo\(&quot;gif&quot;\);\R\t\t\t\tip\.convertTo\(&quot;png&quot;\)\R\t\}\R\R\}\R"/>
+			<item value="ext"/>
 			<item value="tessel"/>
 			<item value="tessellation"/>
 			<item value="tessell"/>
 			<item value="toString"/>
 			<item value="부패(식중독)"/>
 			<item value="setNode"/>
-			<item value="getNode"/>
-			<item value="SingleList"/>
-			<item value="head"/>
-			<item value="valueOf"/>
-			<item value="PolygonType"/>
-			<item value="getType"/>
-			<item value="count"/>
-			<item value="n"/>
-			<item value="getPolygonType"/>
 		</list>
 		<list key="replacehistory">
+			<item value="ex"/>
 			<item value=""/>
 			<item value="부패"/>
 			<item value="S"/>
